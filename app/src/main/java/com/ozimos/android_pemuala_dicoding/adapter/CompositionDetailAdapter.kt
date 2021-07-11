@@ -3,11 +3,11 @@ package com.ozimos.android_pemuala_dicoding.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.ozimos.android_pemuala_dicoding.databinding.ItemCompositionBinding
+import com.ozimos.android_pemuala_dicoding.databinding.ItemCompositionDetailBinding
 
-class CompositoinAdapter(private val items: List<String>) :
-    RecyclerView.Adapter<CompositoinAdapter.CompositionViewHolder>() {
-    inner class CompositionViewHolder(val binding: ItemCompositionBinding) :
+class CompositionDetailAdapter(private val items: List<String>) :
+    RecyclerView.Adapter<CompositionDetailAdapter.CompositionViewHolder>() {
+    inner class CompositionViewHolder(val binding: ItemCompositionDetailBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bindData(item: String) {
             binding.tvComposition.text = item
@@ -19,7 +19,7 @@ class CompositoinAdapter(private val items: List<String>) :
         viewType: Int
     ): CompositionViewHolder {
         return CompositionViewHolder(
-            ItemCompositionBinding.inflate(
+            ItemCompositionDetailBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -27,7 +27,10 @@ class CompositoinAdapter(private val items: List<String>) :
         )
     }
 
-    override fun onBindViewHolder(holder: CompositoinAdapter.CompositionViewHolder, position: Int) {
+    override fun onBindViewHolder(
+        holder: CompositionDetailAdapter.CompositionViewHolder,
+        position: Int
+    ) {
         holder.bindData(items[position])
     }
 

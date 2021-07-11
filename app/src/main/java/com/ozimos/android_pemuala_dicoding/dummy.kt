@@ -1,6 +1,9 @@
 package com.ozimos.android_pemuala_dicoding
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Product(
     val id: Int = 0,
     val image: String = "",
@@ -9,7 +12,7 @@ data class Product(
     val time: String = "",
     val calory: String = "",
     val desc: String = ""
-)
+) : Parcelable
 
 val listProduct = listOf(
     Product(

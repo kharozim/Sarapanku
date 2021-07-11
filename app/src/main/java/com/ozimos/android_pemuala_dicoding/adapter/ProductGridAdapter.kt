@@ -6,30 +6,24 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.ozimos.android_pemuala_dicoding.Product
 import com.ozimos.android_pemuala_dicoding.R
-import com.ozimos.android_pemuala_dicoding.databinding.ItemProductLinearBinding
+import com.ozimos.android_pemuala_dicoding.databinding.ItemProductGridBinding
 
-class ProductListAdapter(private val items : List<Product>) :
-    RecyclerView.Adapter<ProductListAdapter.ListViewHolder>() {
+class ProductGridAdapter(private val items: List<Product>) :
+    RecyclerView.Adapter<ProductGridAdapter.GridViewHolder>() {
 
-    private lateinit var onItemClick : OnItemClickListener
-    fun clickItem(listener : OnItemClickListener){
+    private lateinit var onItemClick: OnItemClickListener
+    fun onClick(listener: OnItemClickListener) {
         onItemClick = listener
     }
 
-
-    inner class ListViewHolder(private val binding: ItemProductLinearBinding) :
+    inner class GridViewHolder(private val binding: ItemProductGridBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bindData(item: Product, position: Int) {
-            val compositionAdapter = CompositionAdapter(item.composition)
             binding.run {
                 tvTitle.text = item.name
-                tvDesc.text = item.desc
                 ivProduct.load(item.image) {
                     placeholder(R.mipmap.ic_logo)
                 }
-                rvListComposition.adapter = compositionAdapter
-                rvListComposition.setHasFixedSize(false)
-
                 root.setOnClickListener {
                     onItemClick.onClick(position, item)
                 }
@@ -37,9 +31,9 @@ class ProductListAdapter(private val items : List<Product>) :
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
-        return ListViewHolder(
-            ItemProductLinearBinding.inflate(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GridViewHolder {
+        return GridViewHolder(
+            ItemProductGridBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -47,7 +41,7 @@ class ProductListAdapter(private val items : List<Product>) :
         )
     }
 
-    override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: GridViewHolder, position: Int) {
         holder.bindData(items[position], position)
     }
 

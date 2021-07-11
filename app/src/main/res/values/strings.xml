@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Sarapanku</string>
+    <string name="text_profile">Profile</string>
+    <string name="text_name">M. Ali Kharozim</string>
+    <string name="text_email">kharozim06@gmail.com</string>
+    <string name="text_calory">kalori</string>
+    <string name="text_composition">Komposisi</string>
+    <string name="text_process">Proses</string>
 </resources>

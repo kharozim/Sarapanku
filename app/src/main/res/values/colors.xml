@@ -6,13 +6,14 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="white">#e8e8e8</color>
 
     //custom color
     <color name="primaryGreen">#007f0e</color>
-    <color name="secondaryGreen">#4CAF50</color>
+    <color name="secondaryGreen">#63F368</color>
     <color name="blue_deep">#0042AA</color>
     <color name="red_error">#AA1300</color>
-    <color name="black_trans">#E8000000</color>
+    <color name="black_trans">#A8000000</color>
     <color name="transparent">#00000000</color>
+    <color name="yellow_soft">#FFB300</color>
 </resources>

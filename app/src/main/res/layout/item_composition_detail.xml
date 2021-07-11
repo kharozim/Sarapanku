@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.chip.Chip xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tv_composition"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="4dp"
+    android:layout_marginVertical="4dp"
+    android:textColor="@color/design_default_color_on_primary"
+    app:chipBackgroundColor="@color/primaryGreen"
+    app:chipMinTouchTargetSize="0dp"
+    tools:ignore="SmallSp"
+    tools:text="Telur Dadar" />

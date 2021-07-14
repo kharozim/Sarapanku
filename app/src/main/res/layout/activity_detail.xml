@@ -71,11 +71,13 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="12dp"
+            android:drawablePadding="4dp"
             android:fontFamily="@font/poppins_regular"
             android:gravity="center_vertical"
             android:includeFontPadding="false"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            app:drawableStartCompat="@drawable/ic_baseline_timer_24"
+            app:drawableStartCompat="@drawable/ic_clock"
+            app:drawableTint="@color/white"
             tools:text="5-10menit" />
 
 
@@ -97,6 +99,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="8dp"
+            android:layoutAnimation="@anim/layout_animation_item_left_to_right"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
             app:spanCount="2"
@@ -107,8 +110,8 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="12dp"
-            android:fontFamily="@font/poppins_regular"
             android:drawablePadding="4dp"
+            android:fontFamily="@font/poppins_regular"
             android:gravity="center_vertical"
             android:includeFontPadding="false"
             android:text="@string/text_process"
@@ -117,11 +120,11 @@
             app:drawableTint="@color/white" />
 
         <TextView
-            android:layout_marginTop="8dp"
             android:id="@+id/tv_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
             android:fontFamily="@font/poppins_regular"
             android:includeFontPadding="false"
             tools:text="@tools:sample/lorem/random" />

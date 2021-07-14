@@ -17,6 +17,7 @@ class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        window.statusBarColor = ResourcesCompat.getColor(resources, R.color.black,null)
 
         getData()
         setView()

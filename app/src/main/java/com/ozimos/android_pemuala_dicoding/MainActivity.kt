@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setGridViewLayout() {
-        val adapter = ProductGridAdapter(listProduct)
+        val adapter = ProductGridAdapter(this,listProduct)
         adapter.onClick(object : OnItemClickListener {
             override fun onClick(position: Int, data: Any?) {
                 data as Product
@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setListViewLayout() {
-        val adapter = ProductListAdapter(listProduct)
+        val adapter = ProductListAdapter(this,listProduct)
         adapter.clickItem(object : OnItemClickListener {
             override fun onClick(position: Int, data: Any?) {
                 data as Product

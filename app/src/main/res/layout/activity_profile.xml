@@ -17,6 +17,7 @@
             android:layout_height="wrap_content"
             app:navigationIcon="@drawable/ic_arrow_left"
             app:title="@string/text_profile"
+            android:background="@drawable/bg_gradient"
             app:titleTextColor="@color/white" />
     </com.google.android.material.appbar.AppBarLayout>
 

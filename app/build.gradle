@@ -8,6 +8,15 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
+    signingConfigs {
+        release{
+            storeFile file('keystore.jks')
+            storePassword 'releaseKey'
+            keyAlias 'SarapankuKey'
+            keyPassword 'releaseKey'
+        }
+    }
+
     defaultConfig {
         applicationId "com.ozimos.android_pemuala_dicoding"
         minSdkVersion 23

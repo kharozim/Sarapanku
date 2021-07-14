@@ -1,18 +1,20 @@
 package com.ozimos.android_pemuala_dicoding.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.bumptech.glide.Glide
 import com.ozimos.android_pemuala_dicoding.Product
 import com.ozimos.android_pemuala_dicoding.R
 import com.ozimos.android_pemuala_dicoding.databinding.ItemProductLinearBinding
 
-class ProductListAdapter(private val items : List<Product>) :
+class ProductListAdapter(private val context: Context, private val items: List<Product>) :
     RecyclerView.Adapter<ProductListAdapter.ListViewHolder>() {
 
-    private lateinit var onItemClick : OnItemClickListener
-    fun clickItem(listener : OnItemClickListener){
+    private lateinit var onItemClick: OnItemClickListener
+    fun clickItem(listener: OnItemClickListener) {
         onItemClick = listener
     }
 
@@ -24,9 +26,7 @@ class ProductListAdapter(private val items : List<Product>) :
             binding.run {
                 tvTitle.text = item.name
                 tvDesc.text = item.desc
-                ivProduct.load(item.image) {
-                    placeholder(R.mipmap.ic_logo)
-                }
+                Glide.with(context).load(item.image).into(ivProduct)
                 rvListComposition.adapter = compositionAdapter
                 rvListComposition.setHasFixedSize(false)
 

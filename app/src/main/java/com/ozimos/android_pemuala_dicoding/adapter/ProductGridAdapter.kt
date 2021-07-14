@@ -1,14 +1,16 @@
 package com.ozimos.android_pemuala_dicoding.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.bumptech.glide.Glide
 import com.ozimos.android_pemuala_dicoding.Product
 import com.ozimos.android_pemuala_dicoding.R
 import com.ozimos.android_pemuala_dicoding.databinding.ItemProductGridBinding
 
-class ProductGridAdapter(private val items: List<Product>) :
+class ProductGridAdapter(private val context : Context,private val items: List<Product>) :
     RecyclerView.Adapter<ProductGridAdapter.GridViewHolder>() {
 
     private lateinit var onItemClick: OnItemClickListener
@@ -21,9 +23,7 @@ class ProductGridAdapter(private val items: List<Product>) :
         fun bindData(item: Product, position: Int) {
             binding.run {
                 tvTitle.text = item.name
-                ivProduct.load(item.image) {
-                    placeholder(R.mipmap.ic_logo)
-                }
+                Glide.with(context).load(item.image).into(ivProduct)
                 root.setOnClickListener {
                     onItemClick.onClick(position, item)
                 }
